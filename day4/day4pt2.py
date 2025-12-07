@@ -13,13 +13,12 @@ if __name__ == "__main__":
                 roll_dict[(i, j)] = 0
 
     tot_rolls = 0
-    # for i, line in enumerate(data):
-        # for j, char in enumerate(line):
     while True:
         counter = 0
         for (i, j), char in roll_dict.items():
             if char != 1:
                 continue
+            
             nearby_rolls = 0
             for add_i, add_j in [(-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (-1, 1), (1, -1), (1, 1)]:
                 try:
@@ -36,6 +35,4 @@ if __name__ == "__main__":
         if counter == 0:
             break
     
-    print(' ')
-    print(' ')
     print(tot_rolls)
